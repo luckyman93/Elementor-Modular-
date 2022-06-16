@@ -1,0 +1,216 @@
+.elementor-control-type-url {
+
+	&.elementor-control-dynamic {
+
+		.elementor-input {
+			border-radius: 3px 0 0 3px;
+		}
+	}
+
+	.elementor-control-field {
+		position: relative;
+	}
+
+	&:not(.elementor-control-dynamic),
+	&.elementor-control-dynamic-value {
+
+		.elementor-control-url-more {
+			border-radius: 0 3px 3px 0;
+		}
+	}
+
+	.elementor-control-input-wrapper {
+		display: flex;
+		flex-direction: getValueByDirection(row, row-reverse);
+	}
+
+	.elementor-control-url {
+
+		&-more {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			border: 1px solid $editor-lightest;
+			border-left: none;
+			cursor: pointer;
+
+			i {
+				font-size: 12px;
+			}
+
+			&-options {
+				display: none;
+				padding-top: 10px;
+
+				.elementor-control-field-description {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		&-option {
+			display: flex;
+			align-items: center;
+
+			&:not(:last-child){
+				padding-bottom: 10px;
+			}
+
+			input,
+			label {
+				cursor: pointer;
+			}
+
+			&-input {
+				margin: 0;
+				padding: 0;
+				border-radius: 2px;
+				@include margin-end(5px);
+
+				//hid the browser input style
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				outline: none;
+				content: none;
+
+				//instead of the original style
+				height: 15px;
+				width: 15px;
+				border: 1px solid $editor-lightest;
+
+				//align the mark in the input
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+
+				&:checked  {
+					background: $editor-info;
+					border: none;
+
+					&:before  {
+						display: block;
+						content: "";
+						width: 4px;
+						height: 7px;
+						border: solid white;
+						border-width: 0 2px 2px 0;
+						transform: rotate(45deg);
+					}
+				}
+			}
+
+			label {
+				font-size: 12px;
+			}
+		}
+
+		&-external {
+
+			&-hide {
+
+				.elementor-control-url-more {
+					display: none;
+				}
+			}
+
+			&-show {
+
+				.elementor-input,
+				.elementor-dynamic-cover {
+					border-radius: 3px 0 0 3px;
+				}
+			}
+		}
+
+		&-autocomplete-spinner {
+			display: none;
+			position: absolute;
+			top: 5px;
+			right: 0px;
+			width: 10px;
+			height: 10px;
+			font-size: 10px;
+			color: $gray-light;
+		}
+
+		&__custom-attributes {
+			margin-top: 5px;
+
+			label {
+				font-size: 12px;
+			}
+
+			input {
+				width: 100%;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	.elementor-input {
+		direction: ltr; // Force LTR also in RTL languages
+
+		&:not(:focus) {
+
+			+ .elementor-control-url-more {
+				border-color: $editor-lightest;
+			}
+		}
+
+		&:focus {
+
+			~ div {
+				border-color: $editor-light;
+			}
+		}
+	}
+
+	.elementor-control-dynamic-switcher {
+		border-left: none;
+		border-radius: 0 3px 3px 0;
+	}
+}
+
+//Autocomplete URL
+.elementor-autocomplete-menu {
+	position: absolute;
+	background: #fff;
+	color: $editor-darkest;
+	border: 1px solid $editor-light;
+	margin: 0;
+	list-style: none;
+	padding: 4px 0;
+	height: auto;
+	width: 100%;
+	min-width: 260px;
+	max-width: 300px;
+	max-height: 200px;
+	overflow-y: auto;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+	cursor: default;
+	z-index: 1;
+
+	.ui-menu-item {
+		display: flex;
+		justify-content: space-between;
+		align-self: baseline;
+		padding: 5px 8px;
+		font-size: 12px;
+		width: 100%;
+		line-height: 1.2;
+		cursor: pointer;
+
+		&.ui-state-hover,
+		&.ui-state-active,
+		&.ui-state-focus {
+			background: $editor-background;
+		}
+	}
+
+	.elementor-autocomplete-item-info {
+		font-size: 10px;
+		padding-top: 2px;
+	}
+}

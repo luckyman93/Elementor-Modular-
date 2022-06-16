@@ -1,0 +1,69 @@
+.elementor-control-type-structure {
+
+	.elementor-control-field {
+		display: initial;
+	}
+
+	.elementor-control-structure-preset {
+		padding: 3px;
+		border-radius: 3px;
+		display: inline-block;
+		cursor: pointer;
+		height: 50px;
+
+		svg {
+			height: 100%;
+		}
+
+		path {
+			fill: $editor-background;
+		}
+	}
+
+	.elementor-control-structure-reset {
+		padding: 15px 20px 0;
+		font-size: 11px;
+		cursor: pointer;
+		color: $editor-light;
+		border-top: 1px solid $editor-background;
+		margin: 0 -20px;
+	}
+
+	.elementor-control-structure-title {
+		margin: 10px -20px 0;
+
+		&:before {
+			height: 10px;
+			box-shadow: inset 0 2px 4px rgba(127,127,127,.1);
+		}
+	}
+
+	.elementor-control-structure-presets {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		input {
+			display: none;
+
+			&:checked + .elementor-control-structure-preset {
+
+				path {
+					fill: $editor-light;
+				}
+			}
+		}
+	}
+
+	.elementor-control-structure-preset-wrapper {
+		margin-bottom: 15px;
+	}
+
+	.elementor-control-structure-preset-title {
+		text-align: center;
+		padding-top: 5px;
+		font-style: italic;
+		font-size: 11px;
+		color: $editor-light;
+	}
+}

@@ -1,0 +1,147 @@
+.elementor-control-type-gallery {
+
+	.elementor-control {
+
+		&-media__content {
+			border: 1px solid $editor-lightest;
+			border-radius: 3px;
+		}
+
+		&-gallery-status {
+			font-size: 12px;
+			height: 27px;
+			@include padding-start(10px);
+			border-bottom: 1px solid $editor-lightest;
+			display: flex;
+
+			> * {
+				display: flex;
+				align-items: center;
+			}
+
+			&-title {
+				flex-grow: 1;
+			}
+		}
+
+		&-gallery-content {
+			position: relative;
+			overflow: hidden;
+
+			&:not(:hover) {
+
+				.elementor-control-gallery-edit {
+					opacity: 0;
+				}
+			}
+		}
+
+		&-gallery-thumbnails {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+			grid-gap: 10px;
+			cursor: pointer;
+			padding: 10px;
+		}
+
+		&-gallery-thumbnail {
+			width: 48px;
+			height: 48px;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+
+		&-gallery-edit {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba($editor-dark, .3);
+			padding: 10px;
+			font-size: 11px;
+			transition: all .3s ease-in-out;
+			pointer-events: none;
+			cursor: pointer;
+			opacity: 1;
+
+			span {
+				position: absolute;
+				top: 10px;
+				@include end(10px);
+				width: 21px;
+				height: 21px;
+				background-color: rgba(#fff, .9);
+				color: $editor-light;
+				box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+				border-radius: 3px;
+
+				i {
+					font-size: 11px;
+					padding: 5px;
+				}
+			}
+		}
+
+		&-gallery-add {
+			width: 48px;
+			height: 48px;
+			color: #fff;
+			background-color: $editor-lightest;
+			font-size: 14px;
+			border-radius: 0;
+
+			&:hover {
+				background-color: $editor-lighter;
+			}
+
+			i {
+				margin: 0;
+				color: $editor-light;
+			}
+		}
+	}
+
+	&.elementor-gallery-empty {
+
+		.elementor-control-gallery-clear,
+		.elementor-control-gallery-thumbnails,
+		.elementor-control-gallery-edit {
+			display: none;
+		}
+
+		.elementor-control-gallery-content {
+			padding: 10px;
+		}
+	}
+
+	&.elementor-gallery-has-images {
+
+		.elementor-control-gallery-add {
+			display: none;
+		}
+	}
+
+	&.elementor-control-dynamic {
+
+		.elementor-control-gallery-clear {
+			@include border-start(1px solid $editor-lightest);
+		}
+	}
+
+	.elementor-control-gallery-clear {
+		cursor: pointer;
+		justify-content: center;
+
+		&:hover {
+			color: $editor-warning;
+		}
+	}
+
+	.elementor-control-dynamic-switcher {
+		border: none;
+		border-bottom: 1px solid $editor-lightest;
+		@include border-start(1px solid $editor-lightest);
+		border-radius: getValueByDirection(0 3px 0 0, 3px 0 0 0);
+	}
+}

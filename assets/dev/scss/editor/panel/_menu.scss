@@ -1,0 +1,85 @@
+//
+// Menu Panel
+//
+
+#elementor-panel-page-menu {
+	padding: 25px 15px;
+}
+
+.elementor-panel-menu {
+
+	&-group {
+
+		&-title {
+			text-transform: uppercase;
+			font-size: 11px;
+		}
+	}
+
+	&-items {
+		margin: 15px 0 25px;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+
+	&-item {
+		display: table;
+		width: 100%;
+		height: 40px;
+		cursor: pointer;
+		margin-bottom: 1px;
+		background-color: #fff;
+
+		&:hover {
+			background-color: rgba( 255, 255, 255, .8 );
+		}
+
+		> * {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		&-icon {
+			text-align: center;
+			width: 50px;
+			color: $editor-light;
+			font-size: 19px;
+
+			.eicon-editor-external-link {
+				font-size: 18px;
+			}
+		}
+
+		&-title {
+			font-weight: 500;
+
+			> span {
+				color: $editor-success;
+			}
+		}
+
+		a {
+			color: $editor-dark;
+		}
+
+		&-exit-to-dashboard {
+			background-color: $wp-primary;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 12px;
+
+			&:hover {
+				background-color: darken($wp-primary, 5%);
+			}
+
+			.elementor-panel-menu-item-title,
+			.elementor-panel-menu-item-icon {
+				color: #fff;
+			}
+		}
+
+		&-settings-additional-settings {
+			background-color: $editor-background-light;
+		}
+	}
+}

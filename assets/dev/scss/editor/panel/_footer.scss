@@ -1,0 +1,224 @@
+//
+// Panel Footer
+//
+
+#elementor-panel-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	background-color: $editor-darkest;
+}
+
+#elementor-panel-footer-tools {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.elementor-panel-footer-tool {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	color: $editor-light;
+	transition: $transition-hover;
+
+	#elementor-panel-saver-button-update {
+		@include border-end(1px solid #2d8739);
+		border-radius: getValueByDirection(3px 0 0 3px, 0 3px 3px 0);
+
+		i {
+			@include margin-end(5px);
+		}
+	}
+
+	#elementor-panel-saver-button-save-options {
+		float: $start;
+		border-radius: getValueByDirection(0 3px 3px 0, 3px 0 0 3px);
+
+		i {
+			margin: auto;
+		}
+	}
+
+	&.elementor-open {
+		color: #fff;
+	}
+
+	&:not(.elementor-open) {
+
+		&:hover {
+			color: $editor-lightest;
+		}
+
+		.elementor-panel-footer-sub-menu-wrapper {
+			display: none;
+		}
+	}
+}
+
+.elementor-panel-footer-sub-menu-wrapper {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	background-color: $editor-darker;
+	padding: 10px;
+	box-shadow: $panel-top-shadow;
+	cursor: default;
+	z-index: $super-layer;
+}
+
+.elementor-panel-footer-sub-menu {
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.elementor-panel-footer-sub-menu-item {
+	background-color: $editor-darkest;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	cursor: pointer;
+
+	&.elementor-disabled {
+
+		.elementor-icon,
+		.elementor-title {
+			color: $editor-dark;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 1px;
+	}
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	&.active {
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+
+	> * {
+		display: table-cell;
+		height: 40px;
+		vertical-align: middle;
+	}
+
+	.elementor-icon {
+		width: 40px;
+		color: $editor-light;
+	}
+
+	.elementor-title {
+		text-align: $start;
+		color: $editor-lightest;
+	}
+
+	.elementor-description {
+		width: 95px;
+		text-align: $start;
+		font-size: 11px;
+		font-style: italic;
+		color: $editor-light;
+	}
+}
+
+#elementor-panel-footer-help-title {
+	text-align: $start;
+	padding: 10px 0;
+	color: $editor-lightest;
+}
+
+#elementor-panel-footer-responsive {
+	& > i {
+		display: block;
+		height: 100%;
+		line-height: 40px;
+	}
+}
+
+#elementor-panel-footer-saver-publish {
+	width: 80px;
+
+	.elementor-button-state {
+
+		i {
+			@include margin-end(0);
+		}
+
+		#elementor-panel-saver-button-publish-label {
+			display: none;
+		}
+	}
+}
+
+#elementor-panel-footer-saver-options {
+	width: 35px;
+	@include border-start(1px solid $editor-darkest);
+
+	.elementor-last-edited-wrapper {
+		font-size: 11px;
+		font-style: italic;
+		color: $editor-light;
+		padding: 5px 0 15px;
+
+		&:not(.elementor-state-active) {
+
+			.elementor-state-icon {
+				display: none;
+			}
+		}
+
+		time {
+			border-bottom: 1px dotted transparent;
+			transition: all ease-in-out .3s;
+			cursor: pointer;
+
+			&:hover {
+				border-bottom-color: inherit;
+			}
+		}
+	}
+}
+
+.elementor-disabled {
+	cursor: default;
+}
+
+#elementor-panel-saver- {
+
+	&button-{
+		&preview {
+			a {
+				color: $editor-light;
+			}
+		}
+
+		&publish,
+		&save-options {
+			font-size: 11px;
+			text-transform: uppercase;
+			height: 26px;
+
+			&.elementor-disabled {
+				background-color: $editor-darker;
+				color: $editor-light;
+			}
+		}
+
+		&publish {
+			width: 100%;
+			border-radius: getValueByDirection(3px 0 0 3px, 0 3px 3px 0);
+		}
+
+		&save-options {
+			width: 25px;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+.elementor-color-picker {
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: bold;
+		padding: 10px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.e-color-picker {
+	&__tools {
+		display: flex;
+	}
+}
+
+.e-control-color--no-value {
+
+	.pcr-button {
+		background-image: linear-gradient(135deg, transparent 46%, #ff3030 50%, transparent 54%);
+		background-size: cover;
+		background-color: transparent;
+		border: 1px solid $editor-lightest;
+	}
+}
+
+.pcr {
+
+	&-app[data-theme=monolith] {
+		padding: 0;
+	}
+
+	&-result {
+		border-right-width: 1px;
+		border-radius: 3px;
+	}
+
+	&-selection, &-interaction {
+		padding: 0 20px;
+	}
+
+	&-interaction {
+		padding-bottom: 20px;
+	}
+
+	.elementor-control-dynamic-switcher {
+		height: 20px;
+		border: 0;
+	}
+}

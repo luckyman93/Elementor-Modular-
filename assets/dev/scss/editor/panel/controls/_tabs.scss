@@ -1,0 +1,39 @@
+
+// Inner Tabs
+.elementor-control-type-tabs {
+	font-size: 0.8em;
+	text-transform: uppercase;
+	display: flex;
+}
+
+.elementor-control-type-tab {
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	line-height: $control-unit - 2;
+	border-top: 1px solid $editor-lightest;
+	border-bottom: 1px solid $editor-lightest;
+	@include border-end(1px solid $editor-lightest);
+	cursor: pointer;
+
+	&:first-child {
+		@include border-start(1px solid $editor-lightest);
+		@include _dimension_side_property(border-top, start, radius, 3px);
+		@include _dimension_side_property(border-bottom, start, radius, 3px);
+	}
+
+	&:last-child {
+		@include _dimension_side_property(border-top, end, radius, 3px);
+		@include _dimension_side_property(border-bottom, end, radius, 3px);
+	}
+
+	&.elementor-tab-active {
+		background-color: $editor-light;
+		border-color: $editor-light;
+		color: #ffffff;
+	}
+}
+
+.elementor-tab-close {
+	display: none !important;
+}

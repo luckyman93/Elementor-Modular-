@@ -1,0 +1,67 @@
+//
+// Forms
+//
+
+input, select, textarea, .elementor-input-style {
+	border-radius: 3px;
+	font-size: 12px;
+	width: 100%;
+	background: none;
+	box-shadow: none;
+	color: $editor-dark;
+	border: 1px solid;
+	outline: none;
+
+	&:not(:focus) {
+		border-color: $editor-lightest;
+	}
+
+	&:focus {
+
+		&, + .elementor-control-dynamic-switcher {
+			border-color: $editor-light;
+		}
+	}
+
+	&::placeholder {
+		color: $editor-light;
+	}
+}
+
+.elementor-error {
+
+	input, select, textarea {
+		border-color: $editor-warning;
+	}
+}
+
+input {
+	// This fixes an issue in Firefox, in cases where a container with `display: flex` has a defined width,
+	// an input element inside this container cannot be given its own defined width.
+	min-width: 0;
+}
+
+input, textarea, .elementor-input-style {
+	padding: 5px;
+}
+
+textarea, .elementor-input-style {
+	resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	height: auto;
+	width: auto;
+}
+
+input[disabled] {
+	background-color: $editor-background;
+	cursor: not-allowed;
+	opacity: 1;
+}
+
+select {
+	outline: none;
+	height: $control-unit;
+}

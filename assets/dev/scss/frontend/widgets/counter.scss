@@ -1,0 +1,40 @@
+//
+// Counter
+//
+
+.elementor-counter {
+
+	.elementor-counter- {
+
+		&number- {
+
+			&wrapper {
+				display: flex;
+				font-size: 69px;
+				font-weight: 600;
+				line-height: 1;
+			}
+
+			&prefix,
+			&suffix {
+				flex-grow: 1;
+				white-space: pre-wrap;
+			}
+
+			&prefix {
+				text-align: $end;
+			}
+
+			&suffix {
+				text-align: $start;
+			}
+		}
+
+		&title {
+			text-align: center;
+			font-size: 19px;
+			font-weight: 400;
+			line-height: 2.5;
+		}
+	}
+}

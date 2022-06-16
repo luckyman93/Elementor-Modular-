@@ -1,0 +1,60 @@
+.elementor-control-type-popover_toggle {
+
+	input {
+		display: none;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	.elementor-control-input-wrapper {
+		direction: getInverseDirection();
+	}
+
+	.elementor-control-popover-toggle-toggle {
+
+		&:checked {
+
+			+ .elementor-control-popover-toggle-toggle-label {
+				color: $editor-info;
+			}
+		}
+
+		&:not(:checked) {
+
+			~ .elementor-control-popover-toggle-reset-label {
+				display: none;
+			}
+		}
+	}
+
+	.elementor-control-popover-toggle-reset-label {
+		color: $editor-lighter;
+		@include margin-end(5px);
+	}
+
+	.elementor-control-popover-toggle-toggle-label {
+		height: $control-unit;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 3px;
+		border: 1px solid $editor-lightest;
+	}
+}
+
+.elementor-controls-popover {
+
+	&.e-controls-popover--typography {
+		padding-top: 0;
+	}
+}
+
+.e-control-global {
+
+	.elementor-control-popover-toggle-toggle-label {
+		border-radius: getValueByDirection(0 3px 3px 0, 3px 0 0 3px);
+		flex-shrink: 0;
+	}
+}
